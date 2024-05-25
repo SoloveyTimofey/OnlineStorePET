@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TestWPF">
+
+    <Color x:Key="BlueMain">#0a8fef</Color>
+    <SolidColorBrush x:Key="BlueMainBrush" Color="{StaticResource BlueMain}"/>
+
+    <Color x:Key="OrangeImportant">#0a8fef</Color>
+    <SolidColorBrush x:Key="OrangeImportantBrush" Color="{StaticResource OrangeImportant}"/>
+
+    <Color x:Key="BackgroundGray">#eaeae7</Color>
+    <SolidColorBrush x:Key="BackgroundGrayBrush" Color="{StaticResource BackgroundGray}"/>
+</ResourceDictionary>

@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:components="clr-namespace:ManagementApplication.Components">
+    <Style TargetType="{x:Type Label}" x:Key="SecondaryLabel">
+        <Setter Property="FontFamily" Value="sans-serif"/>
+        <Setter Property="Foreground" Value="{StaticResource SecondaryTextBrush}"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+    </Style>
+    
+    <Style x:Key="BaseInputControlSettings">
+        <Setter Property="Control.BorderThickness" Value="1"/>
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Setter Property="Control.BorderBrush" Value="{StaticResource LighterBlackBrush}"/>
+        <Setter Property="Control.Width" Value="200"/>
+        <Setter Property="Control.Height" Value="24"/>
+        <Setter Property="Control.FontSize" Value="14"/>
+        <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+        <Style.Triggers>
+            <Trigger Property="Control.IsMouseOver" Value="True">
+                <Setter Property="Control.BorderBrush" Value="{StaticResource BlueMainBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseInputControlSettings}"  x:Key="CustomTextBox"/>
+    <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource BaseInputControlSettings}" x:Key="CustomPasswordBox">
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" x:Key="ImportantButton">
+        <Setter Property="Background" Value="{StaticResource OrangeImportantBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="0,20,0,0"/>
+    </Style>
+    <Style TargetType="{x:Type Button}" x:Key="CategoryButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0,1,0,1"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource BlueMainBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource CategoryButton}" x:Key="CreateButton">
+        <Setter Property="BorderThickness" Value="1.3"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource SecondaryLabel}" x:Key="WarningLabel">
+        <Setter Property="Foreground" Value="{StaticResource WarningRedBrush}"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+    </Style>
+    <Style TargetType="{x:Type Label}" x:Key="PrimaryLabel">
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="Foreground" Value="{StaticResource LighterBlackBrush}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
+    <Style TargetType="{x:Type ListViewItem}" x:Key="ClothingSizeListItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
+                        <CheckBox IsChecked="{Binding IsIncluded,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{StaticResource OrangeImportantBrush}"/>
+                        <Label Content="{Binding Size}" FontSize="12" Width="50" FontWeight="SemiBold" Foreground="{StaticResource LighterBlackBrush}"/>
+                        <TextBox Text="{Binding Count,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding IsIncluded}" Margin="5,0,0,0" Style="{StaticResource CustomTextBox}" Width="65"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

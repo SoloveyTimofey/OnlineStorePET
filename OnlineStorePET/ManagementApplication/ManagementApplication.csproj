@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <StartupObject>ManagementApplication.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\add.png" />
+    <None Remove="Icons\add2.png" />
+    <None Remove="Icons\brand.png" />
+    <None Remove="Icons\category.png" />
+    <None Remove="Icons\clothes.png" />
+    <None Remove="Icons\clothing.png" />
+    <None Remove="Icons\clothingfit.png" />
+    <None Remove="Icons\clothingsize.png" />
+    <None Remove="Icons\color.png" />
+    <None Remove="Icons\country.png" />
+    <None Remove="Icons\defaultImage.png" />
+    <None Remove="Icons\selection.png" />
+    <None Remove="Icons\shoe.png" />
+    <None Remove="Icons\shoesize.png" />
+    <None Remove="Icons\sleevelenght.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.4" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SimpleInjector" Version="5.4.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StoreDataModels\StoreDataModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\add.png" />
+    <Resource Include="Icons\add2.png" />
+    <Resource Include="Icons\brand.png" />
+    <Resource Include="Icons\category.png" />
+    <Resource Include="Icons\clothing.png" />
+    <Resource Include="Icons\clothingfit.png" />
+    <Resource Include="Icons\clothingsize.png" />
+    <Resource Include="Icons\color.png" />
+    <Resource Include="Icons\country.png" />
+    <Resource Include="Icons\defaultImage.png" />
+    <Resource Include="Icons\shoe.png" />
+    <Resource Include="Icons\shoesize.png" />
+    <Resource Include="Icons\sleevelenght.png" />
+  </ItemGroup>
+
+</Project>

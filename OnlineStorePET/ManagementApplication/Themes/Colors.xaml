@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ManagementApplication">
+
+    <Color x:Key="BlueMain">#0a8fef</Color>
+    <SolidColorBrush x:Key="BlueMainBrush" Color="{StaticResource BlueMain}"/>
+
+    <Color x:Key="OrangeImportant">#ec6852</Color>
+    <SolidColorBrush x:Key="OrangeImportantBrush" Color="{StaticResource OrangeImportant}"/>
+
+    <Color x:Key="BackgroundGray">#eaeae7</Color>
+    <SolidColorBrush x:Key="BackgroundGrayBrush" Color="{StaticResource BackgroundGray}"/>
+
+    <Color x:Key="SecondaryText">#78746b</Color>
+    <SolidColorBrush x:Key="SecondaryTextBrush" Color="{StaticResource SecondaryText}"/>
+
+    <Color x:Key="LighterBlack">#4d483c</Color>
+    <SolidColorBrush x:Key="LighterBlackBrush" Color="{StaticResource LighterBlack}"/>
+
+    <Color x:Key="WarningRed">#db241a</Color>
+    <SolidColorBrush x:Key="WarningRedBrush" Color="{StaticResource WarningRed}"/>
+</ResourceDictionary>

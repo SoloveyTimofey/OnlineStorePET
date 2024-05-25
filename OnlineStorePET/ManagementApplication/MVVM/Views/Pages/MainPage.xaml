@@ -1,0 +1,45 @@
+﻿<Page x:Class="ManagementApplication.MVVM.Views.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Converters="clr-namespace:ManagementApplication.Infrastructure.Converters"
+      xmlns:local="clr-namespace:ManagementApplication.MVVM.Views.Pages"
+      mc:Ignorable="d" 
+      Background="{StaticResource BackgroundGrayBrush}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+    <Page.Resources>
+        <Converters:SelectedPageConverter x:Key="SelectedPageConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="White">
+            <StackPanel.Effect>
+                <DropShadowEffect Color="{StaticResource BlueMain}" BlurRadius="15" Opacity="0.5" />
+            </StackPanel.Effect>
+            <Button Style="{StaticResource CategoryButton}" Background="{Binding CurrentPage, Converter={StaticResource SelectedPageConverter}, ConverterParameter='Create'}" Command="{Binding SwitchToPage}" CommandParameter="Create" Margin="0,20,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/ManagementApplication;component/Icons/add.png" Width="30"/>
+                    <Label>CREATE</Label>
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource CategoryButton}" Background="{Binding CurrentPage, Converter={StaticResource SelectedPageConverter}, ConverterParameter='Clothes'}" Command="{Binding SwitchToPage}" CommandParameter="Clothes" BorderThickness="0,0,0,1">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/ManagementApplication;component/Icons/clothing.png" Width="30"/>
+                    <Label>CLOTHES</Label>
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource CategoryButton}" Background="{Binding CurrentPage, Converter={StaticResource SelectedPageConverter}, ConverterParameter='Shoes'}" Command="{Binding SwitchToPage}" CommandParameter="Shoes" BorderThickness="0,0,0,1">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/Icons/shoe.png" Width="30"/>
+                    <Label>SHOES</Label>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Frame Grid.Column="1" Content="{Binding CurrentPage}" Margin="10,0,0,0"  NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Page>

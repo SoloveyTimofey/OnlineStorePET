@@ -1,0 +1,15 @@
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\bin\Debug\HttpClientIfWPF.exe.config
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\bin\Debug\HttpClientIfWPF.exe
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\bin\Debug\HttpClientIfWPF.pdb
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\HttpClientIfWPF.csproj.AssemblyReference.cache
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\MainWindow.g.cs
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\App.g.cs
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\HttpClientIfWPF_MarkupCompile.cache
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\HttpClientIfWPF_MarkupCompile.lref
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\MainWindow.baml
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\HttpClientIfWPF.g.resources
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\HttpClientIfWPF.Properties.Resources.resources
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\HttpClientIfWPF.csproj.GenerateResource.cache
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\HttpClientIfWPF.csproj.CoreCompileInputs.cache
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\HttpClientIfWPF.exe
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\HttpClientIfWPF\obj\Debug\HttpClientIfWPF.pdb
