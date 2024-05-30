@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace StoreDataModels.DTO;
 
-public record ImageDTO
+public record ImageDTO : IRequest<Image>
 {
     public string? Description { get; set; }
     public byte[] ImageBytes { get; set; } = null!;

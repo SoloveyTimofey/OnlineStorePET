@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using OnlineStorePET.CQRS.Command.General.Commands;
+using OnlineStorePET.CQRS.Command.General.Handlers;
+using OnlineStorePET.CQRS.Query.Clothes.Queries;
 using OnlineStorePET.Services.Interfaces.Repositories;
 using StoreDataModels;
 using StoreDataModels.DTO;
@@ -14,12 +17,10 @@ namespace OnlineStorePET.Controllers.API
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class GeneralController:ControllerBase
     {
-        private readonly IGeneralActionRepository generalActionRepository;
-        private readonly IGeneralGetRepository generalGetRepository;
-        public GeneralController(IGeneralActionRepository generalActionRepository, IGeneralGetRepository generalGetRepository)
+        private readonly IMediator mediator;
+        public GeneralController(IMediator mediator)
         {
-            this.generalActionRepository = generalActionRepository;
-            this.generalGetRepository = generalGetRepository;
+            this.mediator = mediator;
         }
 
         #region Action
@@ -27,20 +28,21 @@ namespace OnlineStorePET.Controllers.API
         [HttpPost, Route(nameof(CreateCountry))]
         public async Task<Country> CreateCountry([FromBody] CountryDTO country)
         {
-            return await generalActionRepository.CreateCountryAsync(country);
+            return await mediator.Send(country);
         }
 
         [HttpPatch, Route(nameof(UpdateCountry) + "/{id}")]
         public async Task<Country> UpdateCountry([FromRoute] long id, [FromBody] JsonPatchDocument<Country> patchDoc)
         {
-
-            return await generalActionRepository.UpdateCountryAsync(id, patchDoc);
+            var command = new UpdateCountryCommand(id, patchDoc);
+            return await mediator.Send(command);
         }
 
         [HttpDelete, Route(nameof(DeleteCountry) + "/{id}")]
         public async Task DeleteCountry([FromRoute] long id)
         {
-            await generalActionRepository.DeleteCountryAsync(id);
+            var command = new DeleteCountryCommand(id);
+            await mediator.Send(command);
         }
         #endregion
 
@@ -48,19 +50,21 @@ namespace OnlineStorePET.Controllers.API
         [HttpPost, Route(nameof(CreateBrand))]
         public async Task<Brand> CreateBrand([FromBody] BrandDTO brand)
         {
-            return await generalActionRepository.CreateBrandAsync(brand);
+            return await mediator.Send(brand); 
         }
 
         [HttpPatch, Route(nameof(UpdateBrand)+"/{id}")]
         public async Task<Brand> UpdateBrand([FromRoute] long id, [FromBody] JsonPatchDocument<Brand> patchDoc)
         {
-            return await generalActionRepository.UpdateBrandAsync(id, patchDoc);
+            var command = new UpdateBrandCommand(id, patchDoc);
+            return await mediator.Send(command);
         }
 
         [HttpDelete, Route(nameof(DeleteBrand)+"/{id}")]
         public async Task DeleteBrand([FromRoute] long id)
         {
-            await generalActionRepository.DeleteBrandAsync(id);
+            var command = new DeleteBrandCommand(id);
+            await mediator.Send(command);
         }
         #endregion
 
@@ -69,19 +73,21 @@ namespace OnlineStorePET.Controllers.API
         [HttpPost, Route(nameof(CreateColor))]
         public async Task<Color> CreateColor([FromBody]ColorDTO color)
         {
-            return await generalActionRepository.CreateColorAsync(color);
+            return await mediator.Send(color);
         }
 
         [HttpPatch, Route(nameof(UpdateColor))]
         public async Task<Color> UpdateColor([FromRoute]long id, [FromBody]JsonPatchDocument<Color> patchDoc)
         {
-            return await generalActionRepository.UpdateColorAsync(id, patchDoc);
+            var command = new UpdateColorCommand(id, patchDoc);
+            return await mediator.Send(command);
         }
 
         [HttpDelete, Route(nameof(DeleteColor)+"/{id}")]
         public async Task DeleteColor([FromRoute]long id)
         {
-            await generalActionRepository.DeleteColorAsync(id);
+            var command = new DeleteColorCommand(id);
+            await mediator.Send(command);
         }
         #endregion
 
@@ -89,19 +95,21 @@ namespace OnlineStorePET.Controllers.API
         [HttpPost, Route(nameof(CreateImage))]
         public async Task<Image> CreateImage([FromBody]ImageDTO image)
         {
-            return await generalActionRepository.CreateImageAsync(image);
+            return await mediator.Send(image);
         }
 
         [HttpPatch, Route(nameof(UpdateImage)+"/{id}")]
         public async Task<Image> UpdateImage([FromRoute]long id,[FromBody] JsonPatchDocument<Image> patchDoc)
         {
-            return await generalActionRepository.UpdateImageAsync(id, patchDoc);
+            var command = new UpdateImageCommand(id, patchDoc);
+            return await mediator.Send(command);
         }
 
         [HttpDelete, Route(nameof(DeleteImage)+"/{id}")]
         public async Task DeleteImage([FromRoute]long id)
         {
-            await generalActionRepository.DeleteImageAsync(id);
+            var command = new DeleteImageCommand(id);
+            await mediator.Send(command);
         }
         #endregion
         #endregion
@@ -110,25 +118,29 @@ namespace OnlineStorePET.Controllers.API
         [HttpGet, Route(nameof(GetAllCountries))]
         public async Task<ICollection<Country>> GetAllCountries()
         {
-            return await generalGetRepository.GetAllCountriesAsync().Result.ToArrayAsync();
+            var query = new GetAllCountriesQuery();
+            return await mediator.Send(query);
         }
 
         [HttpGet, Route(nameof(GetAllBrands))]
         public async Task<ICollection<Brand>> GetAllBrands()
         {
-            return await generalGetRepository.GetAllBrandsAsync().Result.ToArrayAsync();
+            var query = new GetAllBransQuery();
+            return await mediator.Send(query);
         }
 
         [HttpGet, Route(nameof(GetAllImages))]
         public async Task<ICollection<Image>> GetAllImages()
         {
-            return await generalGetRepository.GetAllImagesAsync().Result.ToArrayAsync();
+            var query = new GetAllImagesQuery();
+            return await mediator.Send(query);
         }
 
         [HttpGet, Route(nameof(GetAllColors))]
         public async Task<ICollection<Color>> GetAllColors()
         {
-            return await generalGetRepository.GetAllColorsAsync().Result.ToArrayAsync();
+            var query = new GetAllColorsQuery();
+            return await mediator.Send(query);
         }
         #endregion
     }

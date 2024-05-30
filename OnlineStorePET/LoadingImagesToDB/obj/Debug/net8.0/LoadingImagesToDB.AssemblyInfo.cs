@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoadingImagesToDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44f091ddef53c9bb3f3e8a7edf6a6ea2586d82f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+790df8ecc73d4f1e403d5e120251abf651a824ec")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoadingImagesToDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoadingImagesToDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

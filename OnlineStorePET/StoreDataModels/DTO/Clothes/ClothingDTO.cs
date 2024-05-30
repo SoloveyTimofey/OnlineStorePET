@@ -1,11 +1,10 @@
-﻿namespace StoreDataModels.DTO
-{
-    public record ClothingDTO : ItemDTO
-    {
-        //public ClothingDTO(ItemDTO original) : base(original)
-        //{
-        //}
+﻿using MediatR;
+using StoreDataModels.Clothes;
 
+namespace StoreDataModels.DTO
+{
+    public record ClothingDTO : ItemDTO, IRequest<Clothing>
+    {
         public long CategoryId { get; set; }
 
         public long? SleeveLenghtId { get;set; }

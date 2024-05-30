@@ -1,19 +1,15 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineStorePET.Models.Database;
-using OnlineStorePET.Services.Implementations;
-using OnlineStorePET.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using OnlineStorePET.Extensions;
 using OnlineStorePET.Models.Identity;
 using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
+using System.Reflection;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Authorization;
 using OnlineStorePET.Services.Implementations.Repositories;
+using MediatR;
 using OnlineStorePET.Services.Interfaces.Repositories;
 using Newtonsoft.Json.Serialization;
 
@@ -32,11 +28,13 @@ builder.Services.AddScoped<IShoeGetRepository, ShoeRepository>();
 builder.Services.AddScoped<IClothingActionRepository, ClothingRepository>();
 builder.Services.AddScoped<IClothingGetRepository, ClothingRepository>();
 
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+
 builder.Services.AddDbContext<OnlineStoreDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
 });
-
+ 
 builder.Services.AddDbContext<OnlineStoreIdentityContext>(options =>
 {
     options.UseSqlServer(builder.Configuration["ConnectionStrings:OnlineStoreIdentityConnection"]);

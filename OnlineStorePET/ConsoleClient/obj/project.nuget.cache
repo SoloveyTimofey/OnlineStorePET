@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "T3j15HEBgqXRp1vnIpab2kR8ejUrXtqjbmaQJIbWUS37ro3/pBmjhmccID+ShYa559aU6g70xO1a7Y72IBitGg==",
+  "dgSpecHash": "2n3HAUB9B4HSIMRj4BpW5tjxoU5k57onTYzshYeXETdJxYbg4qujOYlc5b0VRyzgS23MLSd60HNFQxUuVqfP0Q==",
   "success": true,
   "projectFilePath": "C:\\Университет\\Второй семестр\\КТП Курсовий\\PetProject\\OnlineStorePET\\ConsoleClient\\ConsoleClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Тимофей\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
-    "C:\\Users\\Тимофей\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Тимофей\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\Тимофей\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Тимофей\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Тимофей\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Тимофей\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Тимофей\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",

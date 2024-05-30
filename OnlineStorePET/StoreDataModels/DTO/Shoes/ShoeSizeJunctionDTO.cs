@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using MediatR;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StoreDataModels.DTO
 {
-    public record ShoeSizeJunctionDTO
+    public record ShoeSizeJunctionDTO : IRequest<ShoeSizeJunctionDTO>
     {
         public long Quantity { get; set; }
 

@@ -1,5 +1,4 @@
-﻿using Azure;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OnlineStorePET.Services.Interfaces.Repositories;
 using StoreDataModels.DTO;
 using Microsoft.AspNetCore.JsonPatch;
@@ -7,6 +6,8 @@ using StoreDataModels.Shoes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using MediatR;
+using OnlineStorePET.CQRS.Query.Shoes.Queries;
 
 namespace OnlineStorePET.Controllers.API
 {
@@ -17,10 +18,12 @@ namespace OnlineStorePET.Controllers.API
     {
         private readonly IShoeActionRepository shoeActionRepository;
         private readonly IShoeGetRepository shoeGetRepository;
-        public ShoesController(IShoeActionRepository shoeActionRepository, IShoeGetRepository shoeGetRepository)
+        private readonly IMediator mediator;
+        public ShoesController(IShoeActionRepository shoeActionRepository, IShoeGetRepository shoeGetRepository, IMediator mediator)
         {
             this.shoeActionRepository = shoeActionRepository;
             this.shoeGetRepository = shoeGetRepository;
+            this.mediator = mediator;
         }
 
         #region Action
@@ -103,7 +106,8 @@ namespace OnlineStorePET.Controllers.API
         [HttpGet, Route(nameof(GetAllShoes))]
         public async Task<ICollection<Shoe>> GetAllShoes()
         {
-            return await shoeGetRepository.GetAllShoesAsync().Result.ToArrayAsync();
+            var query = new GetAllShoesQuery();
+            return await mediator.Send(query);
         }
 
         [HttpGet, Route(nameof(GetAllShoeCategories))]

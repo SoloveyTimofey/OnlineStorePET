@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace StoreDataModels.DTO
 {
-    public record ColorDTO
+    public record ColorDTO : IRequest<Color>
     {
         [Required]
         public string Name { get; set; } = null!;

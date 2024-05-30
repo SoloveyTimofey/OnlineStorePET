@@ -7,6 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CQRS\Command\Interfaces\**" />
+    <Compile Remove="CQRS\Command\Realisations\**" />
+    <Compile Remove="CQRS\Query\Handlers\**" />
+    <Compile Remove="CQRS\Query\Queries\**" />
+    <Content Remove="CQRS\Command\Interfaces\**" />
+    <Content Remove="CQRS\Command\Realisations\**" />
+    <Content Remove="CQRS\Query\Handlers\**" />
+    <Content Remove="CQRS\Query\Queries\**" />
+    <EmbeddedResource Remove="CQRS\Command\Interfaces\**" />
+    <EmbeddedResource Remove="CQRS\Command\Realisations\**" />
+    <EmbeddedResource Remove="CQRS\Query\Handlers\**" />
+    <EmbeddedResource Remove="CQRS\Query\Queries\**" />
+    <None Remove="CQRS\Command\Interfaces\**" />
+    <None Remove="CQRS\Command\Realisations\**" />
+    <None Remove="CQRS\Query\Handlers\**" />
+    <None Remove="CQRS\Query\Queries\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.4" />
@@ -24,6 +45,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StoreDataModels\StoreDataModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CQRS\Command\Clothes\Commands\" />
+    <Folder Include="CQRS\Command\Clothes\Handlers\" />
+    <Folder Include="CQRS\Command\Shoes\Handlers\" />
+    <Folder Include="CQRS\Command\Shoes\Commands\" />
+    <Folder Include="CQRS\Command\Shoes\" />
+    <Folder Include="CQRS\Query\General\Handlers\" />
+    <Folder Include="CQRS\Query\General\Queries\" />
   </ItemGroup>
 
 </Project>

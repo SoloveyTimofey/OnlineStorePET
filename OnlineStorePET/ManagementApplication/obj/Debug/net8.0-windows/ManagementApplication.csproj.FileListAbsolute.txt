@@ -67,3 +67,5 @@ C:\Университет\Второй семестр\КТП Курсовий\Pe
 C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\ManagementApplication\obj\Debug\net8.0-windows\MVVM\Views\WIndows\CreateUpdate\ClothingWindow.baml
 C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\ManagementApplication\obj\Debug\net8.0-windows\MVVM\Views\WIndows\CreateUpdate\CategoryWindow.g.cs
 C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\ManagementApplication\obj\Debug\net8.0-windows\MVVM\Views\WIndows\CreateUpdate\CategoryWindow.baml
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\ManagementApplication\bin\Debug\net8.0-windows\MediatR.dll
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\ManagementApplication\bin\Debug\net8.0-windows\MediatR.Contracts.dll

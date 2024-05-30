@@ -300,3 +300,6 @@ C:\Университет\Второй семестр\КТП Курсовий\Pe
 C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\OnlineStorePET\obj\Debug\net8.0\OnlineStorePET.pdb
 C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\OnlineStorePET\obj\Debug\net8.0\OnlineStorePET.genruntimeconfig.cache
 C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\OnlineStorePET\obj\Debug\net8.0\ref\OnlineStorePET.dll
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\OnlineStorePET\bin\Debug\net8.0\MediatR.dll
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\OnlineStorePET\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Университет\Второй семестр\КТП Курсовий\PetProject\OnlineStorePET\OnlineStorePET\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

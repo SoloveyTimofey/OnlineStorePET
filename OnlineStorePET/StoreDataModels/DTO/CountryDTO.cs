@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace StoreDataModels.DTO
 {
-    public record CountryDTO
+    public record CountryDTO : IRequest<Country>
     {
         [Required]
         public string Name { get; set; } = null!;

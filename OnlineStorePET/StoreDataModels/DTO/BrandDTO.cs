@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using MediatR;
 
 namespace StoreDataModels.DTO
 {
-    public record BrandDTO
+    public record BrandDTO : IRequest<Brand>
     {
 
         [Required]
