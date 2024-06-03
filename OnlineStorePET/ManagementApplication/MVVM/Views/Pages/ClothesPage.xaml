@@ -10,6 +10,6 @@
       Background="{StaticResource BackgroundGrayBrush}">
 
     <Grid>
-        <DataGrid ItemsSource="{Binding Clothes}"/>
+        
     </Grid>
 </Page>

@@ -16,7 +16,7 @@ namespace OnlineStorePET.Controllers.API
     {
         private readonly IClothingActionRepository clothingActionRepository;
         private readonly IClothingGetRepository clothingGetRepository;
-        public ClothesController(IClothingGetRepository clothingGetRepository, IClothingActionRepository clothingActionRepository, IMediator mediator)
+        public ClothesController(IClothingGetRepository clothingGetRepository, IClothingActionRepository clothingActionRepository)
         {
             this.clothingActionRepository = clothingActionRepository;
             this.clothingGetRepository = clothingGetRepository;
